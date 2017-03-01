@@ -1,0 +1,9 @@
+{
+    "host": "smtp.exmail.qq.com",
+    "port": 465,
+    "auth": {
+        "user": "xx.exmail.qq.com", 
+        "pass": "xxx!@#"
+    },
+    "subject": "xxx"
+}
