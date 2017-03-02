@@ -1,6 +1,6 @@
 const manConfig = require("./man.config.json");
 
-let num1 = randomOne(0, manConfig.length);
+let num1 = randomOne();
 let num2;
 let isNoFindNum2 = true;
 while(isNoFindNum2){
@@ -12,11 +12,14 @@ while(isNoFindNum2){
 }
 
 function randomOne(){
-    return random(0,4);
+    return getRandomInt(0, manConfig.length);
 }
 
-function random(min, max){
-    return parseInt((Math.random() * (max - min)) + min);
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 module.exports = {
