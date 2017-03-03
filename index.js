@@ -3,7 +3,7 @@ const manFinder = require('./manFinder.js');
 const mustache = require('mustache');
 const fs = require('fs');
 
-let mailTemplate = fs.readFileSync(__filename + '/mailTemplate.html', "utf-8");
+let mailTemplate = fs.readFileSync(__dirname + '/mailTemplate.html', "utf-8");
 let viewModel = {
     manFinder: manFinder
 };
