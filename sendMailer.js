@@ -20,5 +20,6 @@ function sendMail(sendMailOptions){
 }
 
 module.exports = {
+    emailSuffix: smtpConfig.auth.user.substring(smtpConfig.auth.user.indexOf('@')),
     send: sendMail
 };

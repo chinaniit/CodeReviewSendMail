@@ -23,6 +23,7 @@ function getRandomInt(min, max) {
 }
 
 module.exports = {
+    all: manConfig,
     finder: manConfig[num1],
     checker: manConfig[num2]
 }

@@ -8,8 +8,14 @@ let viewModel = {
     manFinder: manFinder
 };
 let content = mustache.render(mailTemplate, viewModel);
-console.log(viewModel);
-console.log(content);
+
+let mailSuffix = sendMailer.emailSuffix;
+let tos = [];
+for(let item of manFinder.all){
+    tos.push(item + mailSuffix);
+}
+
 sendMailer.send({
-    text:content
+    text:content,
+    to: tos
 });
