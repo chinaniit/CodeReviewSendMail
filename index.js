@@ -1,5 +1,6 @@
 const sendMailer = require('./sendMailer.js');
 const manFinder = require('./manFinder.js');
+const ccConfig = require("./cc.config.json");
 const mustache = require('mustache');
 const fs = require('fs');
 
@@ -14,8 +15,12 @@ let tos = [];
 for(let item of manFinder.all){
     tos.push(item + mailSuffix);
 }
-
+let ccs = [];
+for(let cc of ccConfig){
+    ccs.push(cc + mailSuffix);
+}
 sendMailer.send({
-    text:content,
-    to: tos
+    html:content,
+    to: tos,
+    cc: ccs
 });

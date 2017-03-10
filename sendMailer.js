@@ -9,7 +9,8 @@ function sendMail(sendMailOptions){
         from: smtpConfig.auth.user,
         to: sendMailOptions.to || smtpConfig.auth.user,
         subject: smtpConfig.subject,
-        text: sendMailOptions.text,
+        html: sendMailOptions.html,
+        cc: sendMailOptions.cc
     };
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
